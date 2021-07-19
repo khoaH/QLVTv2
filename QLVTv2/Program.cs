@@ -13,7 +13,7 @@ namespace QLVTv2
     {
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
-        public static String connstr_publisher = "Data Source=DESKTOP-VG42JCK;Initial Catalog=QLVT;Integrated Security=True";
+        public static String connstr_publisher = "Data Source=DESKTOP-0PH6D87;Initial Catalog=QLVT_DATHANG;Integrated Security=True";
 
         public static SqlDataReader myReader;
         public static String servername = "";
@@ -21,9 +21,9 @@ namespace QLVTv2
         public static String mlogin = "";
         public static String password = "";
 
-        public static String database = "QLVT";
-        public static String remotelogin = "htkn";
-        public static String remotepassword = "123456";
+        public static String database = "QLVT_DATHANG";
+        public static String remotelogin = "tklink";
+        public static String remotepassword = "123";
         public static String mloginDN = "";
         public static String passwordDN = "";
         public static String mGroup = "";
@@ -32,6 +32,9 @@ namespace QLVTv2
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static frmMain frmChinh;
+
+        public static frmDangNhap formDangNhap;
+
 
         public static int KetNoi()
         {
