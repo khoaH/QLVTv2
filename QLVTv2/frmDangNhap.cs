@@ -90,7 +90,7 @@ namespace QLVTv2
             Program.mChinhanh = cb_chinhanh.SelectedIndex;
             Program.mloginDN = Program.mlogin;
             Program.passwordDN = Program.password;
-            String strLenh = "EXEC SP_Lay_Thong_Tin_NV_Tu_Login '" + Program.mlogin + "'";
+            String strLenh = "EXEC SP_DANGNHAP '" + Program.mlogin + "'";
 
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (Program.myReader == null) return;
@@ -105,16 +105,19 @@ namespace QLVTv2
             Program.mHoten = Program.myReader.GetString(1);
             Program.mGroup = Program.myReader.GetString(2);
             Program.myReader.Close();
-            Program.conn.Close()
-            Program.frmChinh.MANV.Text = "Mã NV = " + Program.username;
-            Program.frmChinh.HOTEN.Text = "Mã NV = " + Program.username;
-            Program.frmChinh.NHOM.Text = "Mã NV = " + Program.username;
-            Program.frmChinh.HienThiMenu();
+            Program.conn.Close();
+            Program.frmChinh.txtMaNV.Text = "Mã NV = " + Program.username;
+            Program.frmChinh.txtHoTen.Text = "Họ Tên = " + Program.mHoten;
+            Program.frmChinh.txtNhom.Text = "Nhóm = " + Program.mGroup;
+            //Program.frmChinh.HienThiMenu();
         }
 
         private void btn_thoat_Click(object sender, EventArgs e)
         {
-
+            Program.conn.Close();
+            if (Program.frmChinh != null)
+                Program.frmChinh.Close();
+            Close();
         }
     }
 }

@@ -40,5 +40,10 @@ namespace QLVTv2
                 Program.formDangNhap.Show();
             }
         }
+
+        private void txtMaNV_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
