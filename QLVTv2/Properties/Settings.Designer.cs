@@ -32,5 +32,27 @@ namespace QLVTv2.Properties {
                 return ((string)(this["QLVT_DATHANGConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-0PH6D87\\SERVER1;Initial Catalog=QLVT_DATHANG;Persist Security" +
+            " Info=True;User ID=sa;Password=123")]
+        public string QLVT_DATHANGConnectionString1 {
+            get {
+                return ((string)(this["QLVT_DATHANGConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-0PH6D87\\SERVER2;Initial Catalog=QLVT_DATHANG;Persist Security" +
+            " Info=True;User ID=sa;Password=123")]
+        public string QLVT_DATHANGConnectionString2 {
+            get {
+                return ((string)(this["QLVT_DATHANGConnectionString2"]));
+            }
+        }
     }
 }

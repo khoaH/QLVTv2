@@ -77,6 +77,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLVT_DATHANGDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLVT_DATHANGDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLVT_DATHANGDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLVT_DATHANGDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLVT_DATHANGDataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +126,28 @@
     </None>
     <None Include="QLVT_DATHANGDataSet.xss">
       <DependentUpon>QLVT_DATHANGDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLVT_DATHANGDataSet1.xsc">
+      <DependentUpon>QLVT_DATHANGDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLVT_DATHANGDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLVT_DATHANGDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLVT_DATHANGDataSet1.xss">
+      <DependentUpon>QLVT_DATHANGDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLVT_DATHANGDataSet2.xsc">
+      <DependentUpon>QLVT_DATHANGDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLVT_DATHANGDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLVT_DATHANGDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLVT_DATHANGDataSet2.xss">
+      <DependentUpon>QLVT_DATHANGDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
