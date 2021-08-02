@@ -34,7 +34,7 @@ namespace QLVTv2
         public static frmMain frmChinh;
 
         public static frmDangNhap formDangNhap;
-
+        public static frmNhanVien formNhanVien;
 
         public static int KetNoi()
         {

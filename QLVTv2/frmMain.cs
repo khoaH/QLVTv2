@@ -45,5 +45,18 @@ namespace QLVTv2
         {
 
         }
+
+        private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmNhanVien));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formNhanVien = new frmNhanVien();
+                Program.formNhanVien.MdiParent = this;
+                Program.formNhanVien.Show();
+            }
+
+        }
     }
 }

@@ -109,6 +109,7 @@ namespace QLVTv2
             Program.frmChinh.txtMaNV.Text = "Mã NV = " + Program.username;
             Program.frmChinh.txtHoTen.Text = "Họ Tên = " + Program.mHoten;
             Program.frmChinh.txtNhom.Text = "Nhóm = " + Program.mGroup;
+            Program.frmChinh.btnNhanVien.Enabled = true;
             //Program.frmChinh.HienThiMenu();
         }
 
