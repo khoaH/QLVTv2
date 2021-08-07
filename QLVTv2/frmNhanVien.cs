@@ -13,14 +13,16 @@ namespace QLVTv2
 {
     public partial class frmNhanVien : DevExpress.XtraEditors.XtraForm
     {
+        public int vitri;
+        public string macn;
+        private bool insertSession = false;
+        private TransactionControl tControl;
         public frmNhanVien()
         {
             InitializeComponent();
-        }
-
-        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
+            vitri = 0;
+            macn = "";
+            tControl = new TransactionControl();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -36,16 +38,46 @@ namespace QLVTv2
         private void btnThemNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+            groupThongTin.Enabled = true;
+            nhanVienGridControl.Enabled = false;
+            nhanVienBindingSource.AddNew();
+            txtMaCNNV.Text = "CN1";
+            txtMaCNNV.EditValue = "CN1";
+            spnStatusNV.Text = "0";
+            spnStatusNV.EditValue = "0";
+
         }
 
         private void btnSuaNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            groupThongTin.Enabled = true;
+            nhanVienGridControl.Enabled = false;
 
         }
 
         private void btnXoaNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (fKDatHangNhanVienBindingSource1.Count > 0)
+            {
+                MessageBox.Show("cac !", "Thông báo !", MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                DialogResult ds = MessageBox.Show("Bạn chắc chắn muốn xóa?", "Thông báo !", MessageBoxButtons.YesNo);
+                if (ds == DialogResult.Yes)
+                {
+                    try
+                    {
+                        nhanVienBindingSource.RemoveCurrent();
+                        this.nhanVienTableAdapter1.Update(this.qLVT_DATHANGDataSet1.NhanVien);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi xóa Môn học. " + ex.Message, "Thông báo !", MessageBoxButtons.OK);
+                    }
+                }
+            }
         }
 
         private void btnUndoNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -74,6 +106,62 @@ namespace QLVTv2
 
         private void btnGhiNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //this.Validate();
+            if (txtMaNV.Text.Trim() == "")
+            {
+                MessageBox.Show("Mã nhân viên không được bỏ trống !", "Thông báo !", MessageBoxButtons.OK);
+                txtMaNV.Focus();
+            }
+            if (txtHoNV.Text.Trim() == "")
+            {
+                MessageBox.Show("Họ nhân viên không được bỏ trống !", "Thông báo !", MessageBoxButtons.OK);
+                txtHoNV.Focus();
+            }
+            if (txtTenNV.Text.Trim() == "")
+            {
+                MessageBox.Show("Tên nhân viên không được bỏ trống !", "Thông báo !", MessageBoxButtons.OK);
+                txtTenNV.Focus();
+            }
+            if (txtDiaChiNV.Text.Trim() == "")
+            {
+                MessageBox.Show("Địa chỉ nhân viên không được bỏ trống !", "Thông báo !", MessageBoxButtons.OK);
+                txtDiaChiNV.Focus();
+            }
+            if (dateNV.Text.Trim() == "")
+            {
+                MessageBox.Show("Ngày sinh nhân viên không được bỏ trống !", "Thông báo !", MessageBoxButtons.OK);
+                dateNV.Focus();
+            }
+            if (spnLuongNV.Text.Trim() == "")
+            {
+                MessageBox.Show("Họ nhân viên không được bỏ trống !", "Thông báo !", MessageBoxButtons.OK);
+                spnLuongNV.Focus();
+            }
+
+            else
+            {
+                try
+                {
+                    nhanVienGridControl.Enabled = true;
+                    groupThongTin.Enabled = false;
+
+                    this.nhanVienBindingSource.EndEdit();
+                    this.nhanVienBindingSource.ResetCurrentItem();
+                    this.nhanVienTableAdapter.Update(this.qLVT_DATHANGDataSet.NhanVien);
+                    //this.tableAdapterManager.UpdateAll(this.qLDSVDataSet);
+
+                    XtraMessageBox.Show("Lưu dữ liệu thành công", "", MessageBoxButtons.OK);
+                    btnHuyNV.PerformClick();
+                }
+                catch (Exception ex)
+                {
+                    nhanVienGridControl.Enabled = false;
+                    groupThongTin.Enabled = true;
+                    MessageBox.Show("Lỗi ghi Nhân Viên. " + ex.Message, "Thông báo !", MessageBoxButtons.OK);
+                    txtMaNV.Focus();
+                    return;
+                }
+            }
 
         }
 
@@ -119,8 +207,18 @@ namespace QLVTv2
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet1.DatHang' table. You can move, or remove it, as needed.
+            this.datHangTableAdapter1.Fill(this.qLVT_DATHANGDataSet1.DatHang);
             // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet1.NhanVien' table. You can move, or remove it, as needed.
             this.nhanVienTableAdapter1.Fill(this.qLVT_DATHANGDataSet1.NhanVien);
+            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.DatHang' table. You can move, or remove it, as needed.
+            //this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
+            //// TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.DatHang' table. You can move, or remove it, as needed.
+            //this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
+            //// TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.NhanVien' table. You can move, or remove it, as needed.
+            //this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
+            MessageBox.Show($"Không thể kết nối đến server {Program.servername}", Program.mChinhanh.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             fill_Tables();
             groupThongTin.Enabled = false;
 
@@ -134,14 +232,15 @@ namespace QLVTv2
             if (Program.mGroup == "CONGTY")
             {
                 cbChiNhanh.Enabled = true;
-                btnThemNV.Enabled = btnXoaNV.Enabled = btnHuyNV.Enabled = groupThongTin.Enabled = btnSuaNV.Enabled = btnGhiNV.Enabled = false;
+                btnThemNV.Enabled = btnXoaNV.Enabled = btnHuyNV.Enabled = btnSuaNV.Enabled = btnGhiNV.Enabled = true;
+                groupThongTin.Enabled = false;
             }
             else
             {
                 cbChiNhanh.Enabled = false;
                 groupThongTin.Enabled = false;
                 groupChuyen.Enabled = false;
-                btnGhiNV.Enabled = false;
+                btnGhiNV.Enabled = true;
             }
 
 
@@ -194,6 +293,29 @@ namespace QLVTv2
             {
                 return;
             }
+
+        }
+
+        private void nhanVienBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHuyNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            nhanVienBindingSource.CancelEdit();
+            btnThemNV.Enabled
+               = btnXoaNV.Enabled
+               = btnSuaNV.Enabled
+               = btnUndoNV.Enabled
+               = btnRefeshNV.Enabled = true;
+            groupThongTin.Enabled = false;
+            nhanVienGridControl.Enabled = true;
+            frmNhanVien_Load(sender, e);
+            //if (_position > 0)
+            //{
+            //    mONHOCBindingSource.Position = _position;
+            //}
 
         }
     }

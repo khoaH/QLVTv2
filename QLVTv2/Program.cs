@@ -29,6 +29,8 @@ namespace QLVTv2
         public static String mGroup = "";
         public static String mHoten = "";
         public static int mChinhanh = 0;
+        public static String maChiNhanh = "";
+        public static SqlCommand sqlcmd = new SqlCommand();
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static frmMain frmChinh;
@@ -104,6 +106,29 @@ namespace QLVTv2
                 return ex.State; // trang thai lỗi gởi từ RAISERROR trong SQL Server qua
             }
         }
+
+        public static int getMaCN()
+        {
+            if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
+            String str_sp = "dbo.Get_Branches_ID";
+            Program.sqlcmd = Program.conn.CreateCommand();
+            Program.sqlcmd.CommandType = CommandType.StoredProcedure;
+            Program.sqlcmd.CommandText = str_sp;
+
+            Program.sqlcmd.Parameters.Add("@Ret", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+            Program.sqlcmd.ExecuteNonQuery();
+            String ret = Program.sqlcmd.Parameters["MaCN"].Value.ToString();
+            if (ret == "1")
+            {
+                return 1;
+            }
+            else if (ret == "0")
+            {
+                return 0;
+            }
+            return 0;
+        }
+
         [STAThread]
         static void Main()
         {
