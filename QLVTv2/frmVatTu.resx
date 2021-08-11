@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>814, 17</value>
   </metadata>
   <assembly alias="DevExpress.Data.v19.2" name="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="btnThemNV.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnThemVT.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -140,7 +140,7 @@
         DQogIDwvZz4NCjwvc3ZnPgs=
 </value>
   </data>
-  <data name="btnSuaNV.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSuaVT.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -163,7 +163,7 @@
         OC4yLDIwLDE2LDIweiIgY2xhc3M9IkJsdWUiIC8+DQogIDwvZz4NCjwvc3ZnPgs=
 </value>
   </data>
-  <data name="btnXoaNV.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnXoaVT.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -176,7 +176,7 @@
         MTkgMjUsMjggMjgsMjUgMTksMTYgMjgsNyAiIGZpbGw9IiNEMjRDMkYiIC8+DQo8L3N2Zz4L
 </value>
   </data>
-  <data name="btnUndoNV.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnUndoVT.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -193,7 +193,7 @@
         YXNzPSJCbHVlIiAvPg0KICA8L2c+DQo8L3N2Zz4L
 </value>
   </data>
-  <data name="btnRedoNV.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRedoVT.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -211,7 +211,7 @@
         NnY2TDI4LDE2eiIgY2xhc3M9IkJsdWUiIC8+DQogIDwvZz4NCjwvc3ZnPgs=
 </value>
   </data>
-  <data name="btnRefeshNV.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRefeshVT.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -232,7 +232,7 @@
         Ni40LDkuMiwyMy45LDd6IiBjbGFzcz0iQmx1ZSIgLz4NCiAgPC9nPg0KPC9zdmc+Cw==
 </value>
   </data>
-  <data name="btnHuyNV.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnHuyVT.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -252,7 +252,7 @@
         c3ZnPgs=
 </value>
   </data>
-  <data name="btnGhiNV.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnGhiVT.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -268,41 +268,16 @@
         IC8+DQo8L3N2Zz4L
 </value>
   </data>
-  <data name="btnChuyenNV.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41
-        LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
-        dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAL4CAAAC77u/
-        PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
-        IHZpZXdCb3g9IjAgMCAzMiAzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
-        MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3Bh
-        Y2U9InByZXNlcnZlIiBpZD0iU3dpdGNoX1Jvd194MkZfQ29sdW1uIiBzdHlsZT0iZW5hYmxlLWJhY2tn
-        cm91bmQ6bmV3IDAgMCAzMiAzMiI+DQogIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+CgkuQmx1ZXtmaWxs
-        OiMxMTc3RDc7fQoJLkJsYWNre2ZpbGw6IzcyNzI3Mjt9Cgkuc3Qwe29wYWNpdHk6MC41O30KPC9zdHls
-        ZT4NCiAgPGcgY2xhc3M9InN0MCI+DQogICAgPHBhdGggZD0iTTEyLDI0djZINHYtNS44IE03LjQsMjJI
-        MTJ2LTZoLTAuOUw3LjQsMjJ6IE0xNCwzMGg4di02aC04VjMweiBNMjQsOHY2aDhWOEgyNHogTTI0LDIy
-        aDh2LTZoLThWMjJ6IE0xNCwyMiAgIGg4di02aC04VjIyeiBNMjQsMzBoOHYtNmgtOFYzMHogTTIxLjEs
-        OC43TDE0LDEzLjFWMTRoOFY4LjFMMjEuMSw4Ljd6IiBjbGFzcz0iQmxhY2siIC8+DQogIDwvZz4NCiAg
-        PHBhdGggZD0iTTIwLDdsLTgtNXY0Yy00LjQsMC04LDMuNi04LDhIMGw1LDhsNS04SDZjMC0zLjMsMi43
-        LTYsNi02djRMMjAsN3oiIGNsYXNzPSJCbHVlIiAvPg0KPC9zdmc+Cw==
-</value>
-  </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>161</value>
-  </metadata>
-  <metadata name="nhanVienBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 65</value>
+  <metadata name="vattuBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>939, 17</value>
   </metadata>
   <metadata name="qLVT_DATHANGDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1740, 17</value>
+    <value>1097, 17</value>
   </metadata>
-  <metadata name="nhanVienBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>402, 17</value>
+  <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
   </metadata>
-  <metadata name="nhanVienTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>284, 65</value>
-  </metadata>
-  <metadata name="datHangTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>902, 65</value>
+  <metadata name="vattuTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>188, 56</value>
   </metadata>
 </root>

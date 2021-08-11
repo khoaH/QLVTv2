@@ -57,27 +57,27 @@ namespace QLVTv2
 
         private void btnXoaNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (fKDatHangNhanVienBindingSource1.Count > 0)
-            {
-                MessageBox.Show("cac !", "Thông báo !", MessageBoxButtons.OK);
-                return;
-            }
-            else
-            {
-                DialogResult ds = MessageBox.Show("Bạn chắc chắn muốn xóa?", "Thông báo !", MessageBoxButtons.YesNo);
-                if (ds == DialogResult.Yes)
-                {
-                    try
-                    {
-                        nhanVienBindingSource.RemoveCurrent();
-                        this.nhanVienTableAdapter1.Update(this.qLVT_DATHANGDataSet1.NhanVien);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Lỗi xóa Môn học. " + ex.Message, "Thông báo !", MessageBoxButtons.OK);
-                    }
-                }
-            }
+            //if (fKDatHangNhanVienBindingSource1.Count > 0)
+            //{
+            //    MessageBox.Show("cac !", "Thông báo !", MessageBoxButtons.OK);
+            //    return;
+            //}
+            //else
+            //{
+            //    DialogResult ds = MessageBox.Show("Bạn chắc chắn muốn xóa?", "Thông báo !", MessageBoxButtons.YesNo);
+            //    if (ds == DialogResult.Yes)
+            //    {
+            //        try
+            //        {
+            //            nhanVienBindingSource.RemoveCurrent();
+            //            this.nhanVienTableAdapter1.Update(this.qLVT_DATHANGDataSet1.NhanVien);
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            MessageBox.Show("Lỗi xóa Môn học. " + ex.Message, "Thông báo !", MessageBoxButtons.OK);
+            //        }
+            //    }
+            //}
         }
 
         private void btnUndoNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -147,7 +147,7 @@ namespace QLVTv2
 
                     this.nhanVienBindingSource.EndEdit();
                     this.nhanVienBindingSource.ResetCurrentItem();
-                    this.nhanVienTableAdapter.Update(this.qLVT_DATHANGDataSet.NhanVien);
+                    //this.nhanVienTableAdapter1.Update(this.qLVT_DATHANGDataSet.NhanVien);
                     //this.tableAdapterManager.UpdateAll(this.qLDSVDataSet);
 
                     XtraMessageBox.Show("Lưu dữ liệu thành công", "", MessageBoxButtons.OK);
@@ -253,8 +253,8 @@ namespace QLVTv2
 
         private void fill_Tables()
         {
-            this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
+            //this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
+            //this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
 
         }
 

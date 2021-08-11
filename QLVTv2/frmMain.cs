@@ -58,5 +58,15 @@ namespace QLVTv2
             }
 
         }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
