@@ -37,10 +37,10 @@ namespace QLVTv2
 
         private void btnThemNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
             groupThongTin.Enabled = true;
             nhanVienGridControl.Enabled = false;
-            nhanVienBindingSource.AddNew();
+            //nhanVienBindingSource.AddNew();
+            tControl.prepare(new InsertTransaction(nhanVienBindingSource, "MANV"));
             txtMaCNNV.Text = "CN1";
             txtMaCNNV.EditValue = "CN1";
             spnStatusNV.Text = "0";
@@ -50,6 +50,7 @@ namespace QLVTv2
 
         private void btnSuaNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            tControl.prepare(new UpdateTransaction(nhanVienBindingSource, "MANV"));
             groupThongTin.Enabled = true;
             nhanVienGridControl.Enabled = false;
 
@@ -57,27 +58,27 @@ namespace QLVTv2
 
         private void btnXoaNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //if (fKDatHangNhanVienBindingSource1.Count > 0)
-            //{
-            //    MessageBox.Show("cac !", "Thông báo !", MessageBoxButtons.OK);
-            //    return;
-            //}
-            //else
-            //{
-            //    DialogResult ds = MessageBox.Show("Bạn chắc chắn muốn xóa?", "Thông báo !", MessageBoxButtons.YesNo);
-            //    if (ds == DialogResult.Yes)
-            //    {
-            //        try
-            //        {
-            //            nhanVienBindingSource.RemoveCurrent();
-            //            this.nhanVienTableAdapter1.Update(this.qLVT_DATHANGDataSet1.NhanVien);
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            MessageBox.Show("Lỗi xóa Môn học. " + ex.Message, "Thông báo !", MessageBoxButtons.OK);
-            //        }
-            //    }
-            //}
+            if (fKDatHangNhanVienBindingSource.Count > 0)
+            {
+                MessageBox.Show("cac !", "Thông báo !", MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                DialogResult ds = MessageBox.Show("Bạn chắc chắn muốn xóa?", "Thông báo !", MessageBoxButtons.YesNo);
+                if (ds == DialogResult.Yes)
+                {
+                    try
+                    {
+                        nhanVienBindingSource.RemoveCurrent();
+                        this.nhanVienTableAdapter.Update(this.qLVT_DATHANGDataSet.NhanVien);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi xóa Môn học. " + ex.Message, "Thông báo !", MessageBoxButtons.OK);
+                    }
+                }
+            }
         }
 
         private void btnUndoNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -90,7 +91,7 @@ namespace QLVTv2
 
         }
 
-        private void btnRefeshNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnRefreshNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
             {
@@ -145,8 +146,11 @@ namespace QLVTv2
                     nhanVienGridControl.Enabled = true;
                     groupThongTin.Enabled = false;
 
+                    tControl.commit();
                     this.nhanVienBindingSource.EndEdit();
                     this.nhanVienBindingSource.ResetCurrentItem();
+                    this.nhanVienTableAdapter.Update(this.qLVT_DATHANGDataSet.NhanVien);
+                    this.tableAdapterManager.UpdateAll(this.qLVT_DATHANGDataSet);
                     //this.nhanVienTableAdapter1.Update(this.qLVT_DATHANGDataSet.NhanVien);
                     //this.tableAdapterManager.UpdateAll(this.qLDSVDataSet);
 
@@ -207,17 +211,12 @@ namespace QLVTv2
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet1.DatHang' table. You can move, or remove it, as needed.
-            this.datHangTableAdapter1.Fill(this.qLVT_DATHANGDataSet1.DatHang);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet1.NhanVien' table. You can move, or remove it, as needed.
-            this.nhanVienTableAdapter1.Fill(this.qLVT_DATHANGDataSet1.NhanVien);
             // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.DatHang' table. You can move, or remove it, as needed.
-            //this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
-            //// TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.DatHang' table. You can move, or remove it, as needed.
-            //this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
-            //// TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.NhanVien' table. You can move, or remove it, as needed.
-            //this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
-            MessageBox.Show($"Không thể kết nối đến server {Program.servername}", Program.mChinhanh.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
+            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.NhanVien' table. You can move, or remove it, as needed.
+            this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
+            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.DatHang' table. You can move, or remove it, as needed.
+
 
             fill_Tables();
             groupThongTin.Enabled = false;
@@ -225,21 +224,21 @@ namespace QLVTv2
             cbChiNhanh.DataSource = Program.bds_dspm;
             cbChiNhanh.DisplayMember = "TENCN";
             cbChiNhanh.ValueMember = "TENSERVER";
+            Program.bds_dspm.Filter = "TENCN LIKE 'CHI%'";
             cbChiNhanh.SelectedIndex = Program.mChinhanh;
-
             cbChiNhanhChuyen.Items.Add(Program.mChinhanh == 0 ? "Chi nhánh 2" : "Chi nhánh 1");
 
             if (Program.mGroup == "CONGTY")
             {
                 cbChiNhanh.Enabled = true;
-                btnThemNV.Enabled = btnXoaNV.Enabled = btnHuyNV.Enabled = btnSuaNV.Enabled = btnGhiNV.Enabled = true;
+                btnThemNV.Enabled = btnXoaNV.Enabled = btnHuyNV.Enabled = btnSuaNV.Enabled = btnGhiNV.Enabled = btnUndoNV.Enabled = btnRedoNV.Enabled = false;
                 groupThongTin.Enabled = false;
             }
             else
             {
                 cbChiNhanh.Enabled = false;
                 groupThongTin.Enabled = false;
-                groupChuyen.Enabled = false;
+                groupChuyen.Enabled = true;
                 btnGhiNV.Enabled = true;
             }
 
@@ -253,8 +252,10 @@ namespace QLVTv2
 
         private void fill_Tables()
         {
-            //this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
-            //this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
+            this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
+            this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
 
         }
 
@@ -308,7 +309,7 @@ namespace QLVTv2
                = btnXoaNV.Enabled
                = btnSuaNV.Enabled
                = btnUndoNV.Enabled
-               = btnRefeshNV.Enabled = true;
+               = btnRefreshNV.Enabled = true;
             groupThongTin.Enabled = false;
             nhanVienGridControl.Enabled = true;
             frmNhanVien_Load(sender, e);
@@ -318,5 +319,31 @@ namespace QLVTv2
             //}
 
         }
+
+        private void nhanVienBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.nhanVienBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.qLVT_DATHANGDataSet);
+
+        }
+
+        private void nhanVienBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.nhanVienBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.qLVT_DATHANGDataSet);
+
+        }
+
+        private void nhanVienBindingSource_CurrentChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void btnRefreshNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        //{
+
+        //}
     }
 }

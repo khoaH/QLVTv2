@@ -161,12 +161,13 @@ namespace QLVTv2
 
         public void commit()
         {
+            data = ((DataRowView)binding.Current).Row.ItemArray;
+            prime = data[0];
         }
 
         public void execute()
         {
-            data = ((DataRowView)binding.Current).Row.ItemArray;
-            prime = data[0];
+            binding.AddNew();
         }
 
         public void redo()

@@ -57,7 +57,8 @@ namespace QLVTv2
         {
             try
             {
-                Program.servername = cb_chinhanh.SelectedValue.ToString();
+                //Program.servername = cb_chinhanh.SelectedValue.ToString();
+                Program.servername = cb_chinhanh.SelectedValue.ToString(); 
             }
             catch (Exception) { }
         }
@@ -110,6 +111,7 @@ namespace QLVTv2
             Program.frmChinh.txtHoTen.Text = "Họ Tên = " + Program.mHoten;
             Program.frmChinh.txtNhom.Text = "Nhóm = " + Program.mGroup;
             Program.frmChinh.btnNhanVien.Enabled = true;
+            MessageBox.Show("Đăng nhập vào site "+ Program.mChinhanh, "", MessageBoxButtons.OK);
             //Program.frmChinh.HienThiMenu();
         }
 

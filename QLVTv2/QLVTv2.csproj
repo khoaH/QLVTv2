@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QLVTv2</RootNamespace>
     <AssemblyName>QLVTv2</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -60,11 +61,11 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDatHang.cs">
+    <Compile Include="frmPhieuNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDatHang.Designer.cs">
-      <DependentUpon>frmDatHang.cs</DependentUpon>
+    <Compile Include="frmPhieuNhap.Designer.cs">
+      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="frmKho.cs">
       <SubType>Form</SubType>
@@ -84,11 +85,11 @@
     <Compile Include="frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPhieuNhap.cs">
+    <Compile Include="frmDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPhieuNhap.Designer.cs">
-      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
+    <Compile Include="frmDatHang.Designer.cs">
+      <DependentUpon>frmDatHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPhieuXuat.cs">
       <SubType>Form</SubType>
@@ -107,6 +108,14 @@
     </Compile>
     <Compile Include="frmVatTu.Designer.cs">
       <DependentUpon>frmVatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLVT_DATHANGDataSet.cs">
+      <DependentUpon>QLVT_DATHANGDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLVT_DATHANGDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLVT_DATHANGDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ReportDDH_Form.cs">
       <SubType>Form</SubType>
@@ -155,8 +164,8 @@
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDatHang.resx">
-      <DependentUpon>frmDatHang.cs</DependentUpon>
+    <EmbeddedResource Include="frmPhieuNhap.resx">
+      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKho.resx">
       <DependentUpon>frmKho.cs</DependentUpon>
@@ -167,11 +176,8 @@
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPhieuNhap.resx">
-      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPhieuXuat.resx">
-      <DependentUpon>frmPhieuXuat.cs</DependentUpon>
+    <EmbeddedResource Include="frmDatHang.resx">
+      <DependentUpon>frmDatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaoTaiKhoan.resx">
       <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>
@@ -188,6 +194,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
@@ -199,6 +206,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLVT_DATHANGDataSet.xsc">
+      <DependentUpon>QLVT_DATHANGDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLVT_DATHANGDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLVT_DATHANGDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLVT_DATHANGDataSet.xss">
+      <DependentUpon>QLVT_DATHANGDataSet.xsd</DependentUpon>
+    </None>
     <None Include="QLVT_DATHANGDataSet1.xsc">
       <DependentUpon>QLVT_DATHANGDataSet1.xsd</DependentUpon>
     </None>

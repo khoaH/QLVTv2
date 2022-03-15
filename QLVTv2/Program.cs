@@ -6,6 +6,7 @@ using DevExpress.UserSkins;
 using DevExpress.Skins;
 using System.Data.SqlClient;
 using System.Data;
+using DevExpress.XtraEditors;
 
 namespace QLVTv2
 {
@@ -37,6 +38,10 @@ namespace QLVTv2
 
         public static frmDangNhap formDangNhap;
         public static frmNhanVien formNhanVien;
+        public static frmVatTu formVatTu;
+        public static frmPhieuNhap formPhieuNhap;
+        public static frmDatHang formDatHang;
+        public static frmKho formKho;
 
         public static int KetNoi()
         {
@@ -51,10 +56,9 @@ namespace QLVTv2
                 Program.conn.Open();
                 return 1;
             }
-
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Bạn xem lại user name và password.", "Lỗi đăng nhập", MessageBoxButtons.OK);
                 return 0;
             }
         }

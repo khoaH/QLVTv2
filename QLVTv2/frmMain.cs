@@ -68,5 +68,53 @@ namespace QLVTv2
         {
 
         }
+
+        private void btnVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmVatTu));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formVatTu = new frmVatTu();
+                Program.formVatTu.MdiParent = this;
+                Program.formVatTu.Show();
+            }
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmPhieuNhap));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formPhieuNhap = new frmPhieuNhap();
+                Program.formPhieuNhap.MdiParent = this;
+                Program.formPhieuNhap.Show();
+            }
+        }
+
+        private void btnDDH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmDatHang));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formDatHang = new frmDatHang();
+                Program.formDatHang.MdiParent = this;
+                Program.formDatHang.Show();
+            }
+        }
+
+        private void btnKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmNhanVien));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formKho = new frmKho();
+                Program.formKho.MdiParent = this;
+                Program.formKho.Show();
+            }
+        }
     }
 }
