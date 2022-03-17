@@ -60,7 +60,7 @@ namespace QLVTv2
         {
             if (fKDatHangNhanVienBindingSource.Count > 0)
             {
-                MessageBox.Show("cac !", "Thông báo !", MessageBoxButtons.OK);
+                MessageBox.Show("NV đã có đơn hàng !", "Thông báo !", MessageBoxButtons.OK);
                 return;
             }
             else
@@ -70,7 +70,8 @@ namespace QLVTv2
                 {
                     try
                     {
-                        nhanVienBindingSource.RemoveCurrent();
+                        //nhanVienBindingSource.RemoveCurrent();
+                        tControl.execute(new DeleteTransaction(nhanVienBindingSource, "MANV"));
                         this.nhanVienTableAdapter.Update(this.qLVT_DATHANGDataSet.NhanVien);
                     }
                     catch (Exception ex)
@@ -83,7 +84,15 @@ namespace QLVTv2
 
         private void btnUndoNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            tControl.undo();
+            nhanVienBindingSource.EndEdit();
+            nhanVienBindingSource.ResetCurrentItem();
+            nhanVienTableAdapter.Update(this.qLVT_DATHANGDataSet.NhanVien);
+            btnRedoNV.Enabled = true;
+            if (tControl.undoStackSize() == 0)
+            {
+                btnUndoNV.Enabled = false;
+            }
         }
 
         private void btnRedoNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

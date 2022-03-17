@@ -116,5 +116,10 @@ namespace QLVTv2
                 Program.formKho.Show();
             }
         }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
