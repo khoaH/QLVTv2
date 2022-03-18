@@ -13,14 +13,11 @@ namespace QLVTv2
 {
     public partial class frmNhanVien : DevExpress.XtraEditors.XtraForm
     {
-        public int vitri;
         public string macn;
-        private bool insertSession = false;
         private TransactionControl tControl;
         public frmNhanVien()
         {
             InitializeComponent();
-            vitri = 0;
             macn = "";
             tControl = new TransactionControl();
         }
@@ -97,7 +94,16 @@ namespace QLVTv2
 
         private void btnRedoNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            tControl.redo();
+            nhanVienBindingSource.EndEdit();
+            nhanVienBindingSource.ResetCurrentItem();
+            this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.nhanVienTableAdapter.Update(this.qLVT_DATHANGDataSet.NhanVien);
+            btnUndoNV.Enabled = true;
+            if (tControl.redoStackSize() == 0)
+            {
+                btnRedoNV.Enabled = false;
+            }
         }
 
         private void btnRefreshNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -270,7 +276,7 @@ namespace QLVTv2
 
         private void cbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnRedoNV.PerformClick();
+            //btnRedoNV.PerformClick();
             try
             {
                 if (cbChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView")
