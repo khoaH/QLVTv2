@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaiKhoan.Designer.cs">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDatHang.resx">
       <DependentUpon>frmDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaiKhoan.resx">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaoTaiKhoan.resx">
       <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>

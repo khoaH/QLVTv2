@@ -46,43 +46,51 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
-            this.vattuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLVT_DATHANGDataSet1 = new QLVTv2.QLVT_DATHANGDataSet1();
             this.vattuTableAdapter = new QLVTv2.QLVT_DATHANGDataSet1TableAdapters.VattuTableAdapter();
             this.tableAdapterManager = new QLVTv2.QLVT_DATHANGDataSet1TableAdapters.TableAdapterManager();
             this.groupThongTin = new System.Windows.Forms.GroupBox();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.txtTenKho = new System.Windows.Forms.Label();
+            this.txtMaCNKho = new DevExpress.XtraEditors.TextEdit();
+            this.khoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lbl_ChiNhanh = new System.Windows.Forms.Label();
+            this.txtTenKho = new DevExpress.XtraEditors.TextEdit();
+            this.lblTenKho = new System.Windows.Forms.Label();
             this.txtMaKho = new DevExpress.XtraEditors.TextEdit();
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.lblMaKho = new System.Windows.Forms.Label();
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
+            this.qLVT_DATHANGDataSet = new QLVTv2.QLVT_DATHANGDataSet();
             this.cbChiNhanh = new System.Windows.Forms.ComboBox();
-            this.khoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.khoTableAdapter = new QLVTv2.QLVT_DATHANGDataSet1TableAdapters.KhoTableAdapter();
             this.khoGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.qLVT_DATHANGDataSet = new QLVTv2.QLVT_DATHANGDataSet();
-            this.khoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.khoTableAdapter1 = new QLVTv2.QLVT_DATHANGDataSetTableAdapters.KhoTableAdapter();
-            this.tableAdapterManager1 = new QLVTv2.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager();
             this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.khoTableAdapter1 = new QLVTv2.QLVT_DATHANGDataSetTableAdapters.KhoTableAdapter();
+            this.tableAdapterManager1 = new QLVTv2.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager();
+            this.fKDatHangKhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datHangTableAdapter = new QLVTv2.QLVT_DATHANGDataSet1TableAdapters.DatHangTableAdapter();
+            this.fKPhieuNhapKhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phieuNhapTableAdapter = new QLVTv2.QLVT_DATHANGDataSet1TableAdapters.PhieuNhapTableAdapter();
+            this.fKPhieuXuatKhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phieuXuatTableAdapter = new QLVTv2.QLVT_DATHANGDataSet1TableAdapters.PhieuXuatTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vattuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet1)).BeginInit();
             this.groupThongTin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaCNKho.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenKho.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKho.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKDatHangKhoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKPhieuNhapKhoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKPhieuXuatKhoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bar2
@@ -99,9 +107,10 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1104, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1656, 34);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 348);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 510);
             // 
             // barManager1
             // 
@@ -176,6 +185,7 @@
             this.btnUndoKho.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnUndoKho.ImageOptions.SvgImage")));
             this.btnUndoKho.Name = "btnUndoKho";
             this.btnUndoKho.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnUndoKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUndoKho_ItemClick);
             // 
             // btnRedoKho
             // 
@@ -184,6 +194,7 @@
             this.btnRedoKho.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRedoKho.ImageOptions.SvgImage")));
             this.btnRedoKho.Name = "btnRedoKho";
             this.btnRedoKho.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnRedoKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRedoKho_ItemClick);
             // 
             // btnRefeshKho
             // 
@@ -218,36 +229,35 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1104, 24);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1656, 34);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 372);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 544);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1104, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1656, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 34);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 348);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 510);
             // 
             // barDockControl1
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl1.Location = new System.Drawing.Point(1104, 24);
+            this.barDockControl1.Location = new System.Drawing.Point(1656, 34);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(0, 348);
-            // 
-            // vattuBindingSource
-            // 
-            this.vattuBindingSource.DataMember = "Vattu";
-            this.vattuBindingSource.DataSource = this.qLVT_DATHANGDataSet1;
+            this.barDockControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControl1.Size = new System.Drawing.Size(0, 510);
             // 
             // qLVT_DATHANGDataSet1
             // 
@@ -275,95 +285,120 @@
             // 
             // groupThongTin
             // 
-            this.groupThongTin.Controls.Add(this.textEdit1);
+            this.groupThongTin.Controls.Add(this.txtMaCNKho);
+            this.groupThongTin.Controls.Add(this.lbl_ChiNhanh);
             this.groupThongTin.Controls.Add(this.txtTenKho);
+            this.groupThongTin.Controls.Add(this.lblTenKho);
             this.groupThongTin.Controls.Add(this.txtMaKho);
             this.groupThongTin.Controls.Add(this.lblDiaChi);
             this.groupThongTin.Controls.Add(this.lblMaKho);
             this.groupThongTin.Controls.Add(this.txtDiaChi);
             this.groupThongTin.Enabled = false;
-            this.groupThongTin.Location = new System.Drawing.Point(12, 259);
+            this.groupThongTin.Location = new System.Drawing.Point(18, 379);
+            this.groupThongTin.Margin = new System.Windows.Forms.Padding(4);
             this.groupThongTin.Name = "groupThongTin";
-            this.groupThongTin.Size = new System.Drawing.Size(1072, 93);
+            this.groupThongTin.Padding = new System.Windows.Forms.Padding(4);
+            this.groupThongTin.Size = new System.Drawing.Size(1608, 136);
             this.groupThongTin.TabIndex = 27;
             this.groupThongTin.TabStop = false;
             this.groupThongTin.Text = "Thông Tin";
             // 
-            // textEdit1
+            // txtMaCNKho
             // 
-            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource1, "TENKHO", true));
-            this.textEdit1.Location = new System.Drawing.Point(751, 47);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(2);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(231, 20);
-            this.textEdit1.TabIndex = 17;
-            this.textEdit1.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
-            // 
-            // txtTenKho
-            // 
-            this.txtTenKho.AutoSize = true;
-            this.txtTenKho.Location = new System.Drawing.Point(700, 50);
-            this.txtTenKho.Name = "txtTenKho";
-            this.txtTenKho.Size = new System.Drawing.Size(46, 13);
-            this.txtTenKho.TabIndex = 16;
-            this.txtTenKho.Text = "Tên Kho";
-            this.txtTenKho.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // txtMaKho
-            // 
-            this.txtMaKho.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource1, "MAKHO", true));
-            this.txtMaKho.Location = new System.Drawing.Point(133, 47);
-            this.txtMaKho.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaKho.MenuManager = this.barManager1;
-            this.txtMaKho.Name = "txtMaKho";
-            this.txtMaKho.Size = new System.Drawing.Size(231, 20);
-            this.txtMaKho.TabIndex = 15;
-            this.txtMaKho.EditValueChanged += new System.EventHandler(this.txtMaVT_EditValueChanged);
-            // 
-            // lblDiaChi
-            // 
-            this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Location = new System.Drawing.Point(407, 50);
-            this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(41, 13);
-            this.lblDiaChi.TabIndex = 11;
-            this.lblDiaChi.Text = "Địa Chỉ";
-            this.lblDiaChi.Click += new System.EventHandler(this.lblDVT_Click);
-            // 
-            // lblMaKho
-            // 
-            this.lblMaKho.AutoSize = true;
-            this.lblMaKho.Location = new System.Drawing.Point(92, 50);
-            this.lblMaKho.Name = "lblMaKho";
-            this.lblMaKho.Size = new System.Drawing.Size(42, 13);
-            this.lblMaKho.TabIndex = 8;
-            this.lblMaKho.Text = "Mã Kho";
-            this.lblMaKho.Click += new System.EventHandler(this.lblMaVT_Click);
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource1, "DIACHI", true));
-            this.txtDiaChi.Location = new System.Drawing.Point(454, 47);
-            this.txtDiaChi.MenuManager = this.barManager1;
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(231, 20);
-            this.txtDiaChi.TabIndex = 4;
-            this.txtDiaChi.EditValueChanged += new System.EventHandler(this.txtDVT_EditValueChanged);
-            // 
-            // cbChiNhanh
-            // 
-            this.cbChiNhanh.Enabled = false;
-            this.cbChiNhanh.FormattingEnabled = true;
-            this.cbChiNhanh.Location = new System.Drawing.Point(415, -136);
-            this.cbChiNhanh.Name = "cbChiNhanh";
-            this.cbChiNhanh.Size = new System.Drawing.Size(312, 21);
-            this.cbChiNhanh.TabIndex = 28;
+            this.txtMaCNKho.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource, "MACN", true));
+            this.txtMaCNKho.Enabled = false;
+            this.txtMaCNKho.Location = new System.Drawing.Point(1126, 20);
+            this.txtMaCNKho.MenuManager = this.barManager1;
+            this.txtMaCNKho.Name = "txtMaCNKho";
+            this.txtMaCNKho.Size = new System.Drawing.Size(150, 28);
+            this.txtMaCNKho.TabIndex = 19;
             // 
             // khoBindingSource
             // 
             this.khoBindingSource.DataMember = "Kho";
             this.khoBindingSource.DataSource = this.qLVT_DATHANGDataSet1;
+            // 
+            // lbl_ChiNhanh
+            // 
+            this.lbl_ChiNhanh.AutoSize = true;
+            this.lbl_ChiNhanh.Location = new System.Drawing.Point(1035, 24);
+            this.lbl_ChiNhanh.Name = "lbl_ChiNhanh";
+            this.lbl_ChiNhanh.Size = new System.Drawing.Size(83, 19);
+            this.lbl_ChiNhanh.TabIndex = 18;
+            this.lbl_ChiNhanh.Text = "Chi Nhánh";
+            // 
+            // txtTenKho
+            // 
+            this.txtTenKho.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource, "TENKHO", true));
+            this.txtTenKho.Location = new System.Drawing.Point(1126, 69);
+            this.txtTenKho.MenuManager = this.barManager1;
+            this.txtTenKho.Name = "txtTenKho";
+            this.txtTenKho.Size = new System.Drawing.Size(346, 28);
+            this.txtTenKho.TabIndex = 17;
+            // 
+            // lblTenKho
+            // 
+            this.lblTenKho.AutoSize = true;
+            this.lblTenKho.Location = new System.Drawing.Point(1050, 73);
+            this.lblTenKho.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTenKho.Name = "lblTenKho";
+            this.lblTenKho.Size = new System.Drawing.Size(68, 19);
+            this.lblTenKho.TabIndex = 16;
+            this.lblTenKho.Text = "Tên Kho";
+            // 
+            // txtMaKho
+            // 
+            this.txtMaKho.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource, "MAKHO", true));
+            this.txtMaKho.Location = new System.Drawing.Point(200, 69);
+            this.txtMaKho.MenuManager = this.barManager1;
+            this.txtMaKho.Name = "txtMaKho";
+            this.txtMaKho.Size = new System.Drawing.Size(346, 28);
+            this.txtMaKho.TabIndex = 15;
+            // 
+            // lblDiaChi
+            // 
+            this.lblDiaChi.AutoSize = true;
+            this.lblDiaChi.Location = new System.Drawing.Point(610, 73);
+            this.lblDiaChi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDiaChi.Name = "lblDiaChi";
+            this.lblDiaChi.Size = new System.Drawing.Size(60, 19);
+            this.lblDiaChi.TabIndex = 11;
+            this.lblDiaChi.Text = "Địa Chỉ";
+            // 
+            // lblMaKho
+            // 
+            this.lblMaKho.AutoSize = true;
+            this.lblMaKho.Location = new System.Drawing.Point(138, 73);
+            this.lblMaKho.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMaKho.Name = "lblMaKho";
+            this.lblMaKho.Size = new System.Drawing.Size(61, 19);
+            this.lblMaKho.TabIndex = 8;
+            this.lblMaKho.Text = "Mã Kho";
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource, "DIACHI", true));
+            this.txtDiaChi.Location = new System.Drawing.Point(681, 69);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiaChi.MenuManager = this.barManager1;
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(346, 28);
+            this.txtDiaChi.TabIndex = 4;
+            // 
+            // qLVT_DATHANGDataSet
+            // 
+            this.qLVT_DATHANGDataSet.DataSetName = "QLVT_DATHANGDataSet";
+            this.qLVT_DATHANGDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cbChiNhanh
+            // 
+            this.cbChiNhanh.Enabled = false;
+            this.cbChiNhanh.FormattingEnabled = true;
+            this.cbChiNhanh.Location = new System.Drawing.Point(622, -199);
+            this.cbChiNhanh.Margin = new System.Windows.Forms.Padding(4);
+            this.cbChiNhanh.Name = "cbChiNhanh";
+            this.cbChiNhanh.Size = new System.Drawing.Size(466, 27);
+            this.cbChiNhanh.TabIndex = 28;
             // 
             // khoTableAdapter
             // 
@@ -371,15 +406,18 @@
             // 
             // khoGridControl
             // 
-            this.khoGridControl.DataSource = this.khoBindingSource1;
-            this.khoGridControl.Location = new System.Drawing.Point(12, 30);
+            this.khoGridControl.DataSource = this.khoBindingSource;
+            this.khoGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.khoGridControl.Location = new System.Drawing.Point(18, 44);
             this.khoGridControl.MainView = this.gridView1;
+            this.khoGridControl.Margin = new System.Windows.Forms.Padding(4);
             this.khoGridControl.MenuManager = this.barManager1;
             this.khoGridControl.Name = "khoGridControl";
-            this.khoGridControl.Size = new System.Drawing.Size(1072, 223);
+            this.khoGridControl.Size = new System.Drawing.Size(1608, 326);
             this.khoGridControl.TabIndex = 28;
             this.khoGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.khoGridControl.Click += new System.EventHandler(this.khoGridControl_Click);
             // 
             // gridView1
             // 
@@ -388,27 +426,54 @@
             this.colTENKHO,
             this.colDIACHI,
             this.colMACN});
+            this.gridView1.DetailHeight = 512;
+            this.gridView1.FixedLineWidth = 3;
             this.gridView1.GridControl = this.khoGridControl;
             this.gridView1.Name = "gridView1";
+            // 
+            // colMAKHO
+            // 
+            this.colMAKHO.FieldName = "MAKHO";
+            this.colMAKHO.MinWidth = 30;
+            this.colMAKHO.Name = "colMAKHO";
+            this.colMAKHO.Visible = true;
+            this.colMAKHO.VisibleIndex = 0;
+            this.colMAKHO.Width = 112;
+            // 
+            // colTENKHO
+            // 
+            this.colTENKHO.FieldName = "TENKHO";
+            this.colTENKHO.MinWidth = 30;
+            this.colTENKHO.Name = "colTENKHO";
+            this.colTENKHO.Visible = true;
+            this.colTENKHO.VisibleIndex = 1;
+            this.colTENKHO.Width = 112;
+            // 
+            // colDIACHI
+            // 
+            this.colDIACHI.FieldName = "DIACHI";
+            this.colDIACHI.MinWidth = 30;
+            this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.Visible = true;
+            this.colDIACHI.VisibleIndex = 2;
+            this.colDIACHI.Width = 112;
+            // 
+            // colMACN
+            // 
+            this.colMACN.FieldName = "MACN";
+            this.colMACN.MinWidth = 30;
+            this.colMACN.Name = "colMACN";
+            this.colMACN.Width = 112;
             // 
             // comboBox1
             // 
             this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(772, 3);
+            this.comboBox1.Location = new System.Drawing.Point(1158, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(312, 21);
+            this.comboBox1.Size = new System.Drawing.Size(466, 27);
             this.comboBox1.TabIndex = 29;
-            // 
-            // qLVT_DATHANGDataSet
-            // 
-            this.qLVT_DATHANGDataSet.DataSetName = "QLVT_DATHANGDataSet";
-            this.qLVT_DATHANGDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // khoBindingSource1
-            // 
-            this.khoBindingSource1.DataMember = "Kho";
-            this.khoBindingSource1.DataSource = this.qLVT_DATHANGDataSet;
             // 
             // khoTableAdapter1
             // 
@@ -429,39 +494,38 @@
             this.tableAdapterManager1.UpdateOrder = QLVTv2.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager1.VattuTableAdapter = null;
             // 
-            // colMAKHO
+            // fKDatHangKhoBindingSource
             // 
-            this.colMAKHO.FieldName = "MAKHO";
-            this.colMAKHO.Name = "colMAKHO";
-            this.colMAKHO.Visible = true;
-            this.colMAKHO.VisibleIndex = 0;
+            this.fKDatHangKhoBindingSource.DataMember = "FK_DatHang_Kho";
+            this.fKDatHangKhoBindingSource.DataSource = this.khoBindingSource;
             // 
-            // colTENKHO
+            // datHangTableAdapter
             // 
-            this.colTENKHO.FieldName = "TENKHO";
-            this.colTENKHO.Name = "colTENKHO";
-            this.colTENKHO.Visible = true;
-            this.colTENKHO.VisibleIndex = 1;
+            this.datHangTableAdapter.ClearBeforeFill = true;
             // 
-            // colDIACHI
+            // fKPhieuNhapKhoBindingSource
             // 
-            this.colDIACHI.FieldName = "DIACHI";
-            this.colDIACHI.Name = "colDIACHI";
-            this.colDIACHI.Visible = true;
-            this.colDIACHI.VisibleIndex = 2;
+            this.fKPhieuNhapKhoBindingSource.DataMember = "FK_PhieuNhap_Kho";
+            this.fKPhieuNhapKhoBindingSource.DataSource = this.khoBindingSource;
             // 
-            // colMACN
+            // phieuNhapTableAdapter
             // 
-            this.colMACN.FieldName = "MACN";
-            this.colMACN.Name = "colMACN";
-            this.colMACN.Visible = true;
-            this.colMACN.VisibleIndex = 3;
+            this.phieuNhapTableAdapter.ClearBeforeFill = true;
+            // 
+            // fKPhieuXuatKhoBindingSource
+            // 
+            this.fKPhieuXuatKhoBindingSource.DataMember = "FK_PhieuXuat_Kho";
+            this.fKPhieuXuatKhoBindingSource.DataSource = this.khoBindingSource;
+            // 
+            // phieuXuatTableAdapter
+            // 
+            this.phieuXuatTableAdapter.ClearBeforeFill = true;
             // 
             // frmKho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 372);
+            this.ClientSize = new System.Drawing.Size(1656, 544);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.khoGridControl);
             this.Controls.Add(this.groupThongTin);
@@ -471,22 +535,25 @@
             this.Controls.Add(this.barDockControl1);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmKho";
             this.Text = "frmKho";
             this.Load += new System.EventHandler(this.frmKho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vattuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet1)).EndInit();
             this.groupThongTin.ResumeLayout(false);
             this.groupThongTin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaCNKho.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenKho.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKho.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKDatHangKhoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKPhieuNhapKhoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKPhieuXuatKhoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,7 +583,6 @@
         private System.Windows.Forms.Label lblMaKho;
         private DevExpress.XtraEditors.TextEdit txtDiaChi;
         private System.Windows.Forms.ComboBox cbChiNhanh;
-        private System.Windows.Forms.BindingSource vattuBindingSource;
         private QLVT_DATHANGDataSet1 qLVT_DATHANGDataSet1;
         private QLVT_DATHANGDataSet1TableAdapters.VattuTableAdapter vattuTableAdapter;
         private QLVT_DATHANGDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
@@ -524,16 +590,23 @@
         private QLVT_DATHANGDataSet1TableAdapters.KhoTableAdapter khoTableAdapter;
         private DevExpress.XtraGrid.GridControl khoGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private System.Windows.Forms.Label txtTenKho;
+        private DevExpress.XtraEditors.TextEdit txtTenKho;
+        private System.Windows.Forms.Label lblTenKho;
         private System.Windows.Forms.ComboBox comboBox1;
         private QLVT_DATHANGDataSet qLVT_DATHANGDataSet;
-        private System.Windows.Forms.BindingSource khoBindingSource1;
         private QLVT_DATHANGDataSetTableAdapters.KhoTableAdapter khoTableAdapter1;
         private QLVT_DATHANGDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKHO;
         private DevExpress.XtraGrid.Columns.GridColumn colTENKHO;
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colMACN;
+        private DevExpress.XtraEditors.TextEdit txtMaCNKho;
+        private System.Windows.Forms.Label lbl_ChiNhanh;
+        private System.Windows.Forms.BindingSource fKDatHangKhoBindingSource;
+        private QLVT_DATHANGDataSet1TableAdapters.DatHangTableAdapter datHangTableAdapter;
+        private System.Windows.Forms.BindingSource fKPhieuNhapKhoBindingSource;
+        private QLVT_DATHANGDataSet1TableAdapters.PhieuNhapTableAdapter phieuNhapTableAdapter;
+        private System.Windows.Forms.BindingSource fKPhieuXuatKhoBindingSource;
+        private QLVT_DATHANGDataSet1TableAdapters.PhieuXuatTableAdapter phieuXuatTableAdapter;
     }
 }

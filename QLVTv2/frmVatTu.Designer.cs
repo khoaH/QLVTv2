@@ -52,6 +52,8 @@
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar4 = new DevExpress.XtraBars.Bar();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
@@ -68,8 +70,6 @@
             this.tableAdapterManager = new QLVTv2.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager();
             this.cTDDHTableAdapter = new QLVTv2.QLVT_DATHANGDataSetTableAdapters.CTDDHTableAdapter();
             this.fKCTDDHVatTuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             label1 = new System.Windows.Forms.Label();
             donViTinhlabel = new System.Windows.Forms.Label();
             tenVatTuLabel = new System.Windows.Forms.Label();
@@ -138,7 +138,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1944, 34);
             this.barDockControlRight.Manager = null;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 903);
             // 
             // cbChiNhanh
@@ -146,7 +146,7 @@
             this.cbChiNhanh.Enabled = false;
             this.cbChiNhanh.FormattingEnabled = true;
             this.cbChiNhanh.Location = new System.Drawing.Point(614, -99);
-            this.cbChiNhanh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbChiNhanh.Margin = new System.Windows.Forms.Padding(4);
             this.cbChiNhanh.Name = "cbChiNhanh";
             this.cbChiNhanh.Size = new System.Drawing.Size(466, 27);
             this.cbChiNhanh.TabIndex = 34;
@@ -180,7 +180,7 @@
             this.picture.Image = ((System.Drawing.Image)(resources.GetObject("picture.Image")));
             this.picture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.picture.Location = new System.Drawing.Point(28, 34);
-            this.picture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picture.Margin = new System.Windows.Forms.Padding(4);
             this.picture.Name = "picture";
             this.picture.Size = new System.Drawing.Size(158, 161);
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -191,7 +191,7 @@
             // 
             this.txtMaVatTu.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "MAVT", true));
             this.txtMaVatTu.Location = new System.Drawing.Point(519, 70);
-            this.txtMaVatTu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaVatTu.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaVatTu.Name = "txtMaVatTu";
             this.txtMaVatTu.Properties.MaxLength = 5;
             this.txtMaVatTu.Size = new System.Drawing.Size(222, 28);
@@ -211,7 +211,7 @@
             // 
             this.txtTenVT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "TENVT", true));
             this.txtTenVT.Location = new System.Drawing.Point(932, 70);
-            this.txtTenVT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenVT.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenVT.Name = "txtTenVT";
             this.txtTenVT.Properties.MaxLength = 40;
             this.txtTenVT.Size = new System.Drawing.Size(222, 28);
@@ -221,7 +221,7 @@
             // 
             this.txtDonViTinh.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "DVT", true));
             this.txtDonViTinh.Location = new System.Drawing.Point(519, 146);
-            this.txtDonViTinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDonViTinh.Margin = new System.Windows.Forms.Padding(4);
             this.txtDonViTinh.Name = "txtDonViTinh";
             this.txtDonViTinh.Properties.MaxLength = 40;
             this.txtDonViTinh.Size = new System.Drawing.Size(222, 28);
@@ -265,7 +265,7 @@
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl2.Location = new System.Drawing.Point(0, 34);
             this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControl2.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControl2.Size = new System.Drawing.Size(0, 903);
             // 
             // barManager2
@@ -310,13 +310,30 @@
             this.bar4.OptionsBar.UseWholeRow = true;
             this.bar4.Text = "Main menu";
             // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Undo";
+            this.barButtonItem3.Id = 10;
+            this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Redo";
+            this.barButtonItem4.Id = 11;
+            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
             // barDockControl3
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControl3.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControl3.Size = new System.Drawing.Size(1944, 34);
             // 
             // barDockControl4
@@ -325,7 +342,7 @@
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControl4.Location = new System.Drawing.Point(0, 937);
             this.barDockControl4.Manager = this.barManager2;
-            this.barDockControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControl4.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControl4.Size = new System.Drawing.Size(1944, 0);
             // 
             // barDockControl5
@@ -334,7 +351,7 @@
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControl5.Location = new System.Drawing.Point(1944, 34);
             this.barDockControl5.Manager = this.barManager2;
-            this.barDockControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControl5.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControl5.Size = new System.Drawing.Size(0, 903);
             // 
             // barBtnThem
@@ -348,7 +365,7 @@
             // 
             this.txtSoLuong.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vattuBindingSource, "SOLUONGTON", true));
             this.txtSoLuong.Location = new System.Drawing.Point(932, 146);
-            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Properties.MaxLength = 40;
             this.txtSoLuong.Size = new System.Drawing.Size(222, 28);
@@ -369,9 +386,9 @@
             this.groupBoxVatTu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBoxVatTu.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.groupBoxVatTu.Location = new System.Drawing.Point(0, 711);
-            this.groupBoxVatTu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxVatTu.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxVatTu.Name = "groupBoxVatTu";
-            this.groupBoxVatTu.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxVatTu.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxVatTu.Size = new System.Drawing.Size(1944, 226);
             this.groupBoxVatTu.TabIndex = 48;
             this.groupBoxVatTu.TabStop = false;
@@ -429,10 +446,10 @@
             // 
             this.gridControlVatTu.DataSource = this.vattuBindingSource;
             this.gridControlVatTu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridControlVatTu.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControlVatTu.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControlVatTu.Location = new System.Drawing.Point(0, 34);
             this.gridControlVatTu.MainView = this.gridView1;
-            this.gridControlVatTu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControlVatTu.Margin = new System.Windows.Forms.Padding(4);
             this.gridControlVatTu.Name = "gridControlVatTu";
             this.gridControlVatTu.Size = new System.Drawing.Size(1944, 666);
             this.gridControlVatTu.TabIndex = 46;
@@ -468,22 +485,6 @@
             this.fKCTDDHVatTuBindingSource.DataMember = "FK_CTDDH_VatTu";
             this.fKCTDDHVatTuBindingSource.DataSource = this.vattuBindingSource;
             // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Undo";
-            this.barButtonItem3.Id = 10;
-            this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Redo";
-            this.barButtonItem4.Id = 11;
-            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
             // frmVatTu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -497,7 +498,7 @@
             this.Controls.Add(this.barDockControl5);
             this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl3);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVatTu";
             this.Text = "frmVatTu";
             this.Load += new System.EventHandler(this.frmVatTu_Load);
