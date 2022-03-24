@@ -50,7 +50,7 @@ namespace QLVTv2
 
             this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
             this.phieuNhapTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuNhap);
-            btnGhiPN.Enabled = btnGhi_CTPN.Enabled = btnHuyPN.Enabled = btnHuyCTPN.Enabled = btnGhi.Enabled = false;
+            btnGhiPN.Enabled = btnGhi_CTPN.Enabled = btnHuyPN.Enabled = btnHuyCTPN.Enabled = false;
             btnThemPN.Enabled = btnThem_CTPN.Enabled = btnSuaPN.Enabled = btnSua_CTPN.Enabled = btnXoaPN.Enabled = btnXoaCTPN.Enabled = true;
             datHangGridControl.Enabled = true;
             PhieuNhapGroupControl.Enabled = CTPNgroupControl.Enabled = false;
@@ -84,11 +84,14 @@ namespace QLVTv2
         {
             PhieuNhapGroupControl.Enabled = true;
             datHangGridControl.Enabled = false;
+
             fKPhieuNhapDatHangBindingSource.AddNew();
+
             txtMaPhieu.ReadOnly = false;
             btnHuyPN.Enabled = btnGhiPN.Enabled = true;
             btnThem_CTPN.Enabled = btnSua_CTPN.Enabled = btnXoaCTPN.Enabled = false;
             btnThemPN.Enabled = btnSuaPN.Enabled = btnXoaPN.Enabled = false;
+
             txtMaNhanVien.EditValue = Program.username;
             txtMaNhanVien.Text = Program.username;
             _position = datHangBindingSource.Position;
@@ -179,6 +182,33 @@ namespace QLVTv2
                 return 0; //chưa có
             }
             return 0;
+        }
+
+        private int kiemTraSL(string mavt, string maddh, decimal sl)
+        {
+            if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
+            String str_sp = null;
+            str_sp = "dbo.SP_CHECK_SL_DDH_PN";
+            Program.sqlcmd = Program.conn.CreateCommand();
+            Program.sqlcmd.CommandType = CommandType.StoredProcedure;
+            Program.sqlcmd.CommandText = str_sp;
+            Program.sqlcmd.Parameters.Add("@maddh", SqlDbType.NChar).Value = maddh;
+            Program.sqlcmd.Parameters.Add("@mavt", SqlDbType.NChar).Value = mavt;
+            Program.sqlcmd.Parameters.Add("@conlai", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+            Program.sqlcmd.ExecuteNonQuery();
+            int ret = -1;
+            try
+            {
+                ret = Int32.Parse(Program.sqlcmd.Parameters["@conlai"].Value.ToString());
+            }
+            catch
+            {
+                return -1;
+            }
+            if (ret < sl)
+                return 0; 
+            else
+                return 1;
         }
 
         private void btnSuaPN_Click(object sender, EventArgs e)
@@ -283,6 +313,11 @@ namespace QLVTv2
             else if (flagSua != 1 && kiemtraCTPN(txtMaPhieuNhap.EditValue.ToString(), lookupMVT.EditValue.ToString()) == 1)
             {
                 XtraMessageBox.Show("Phiếu đã có mặt hàng này. Vui lòng nhập liệu ở phiếu khác hoặc đổi mặt hàng khác!", "Thông báo !", MessageBoxButtons.OK);
+                return;
+            }
+            else if (kiemTraSL(lookupMVT.EditValue.ToString(), txtMaDDH.EditValue.ToString(), numSoLuong.Value) == 0)
+            {
+                XtraMessageBox.Show("Không đủ số lượng trong đơn đặt hàng hoặc không có mặt hàng trong đơn!", "Thông báo !", MessageBoxButtons.OK);
                 return;
             }
             try
@@ -430,6 +465,11 @@ namespace QLVTv2
         }
 
         private void btnHuyCTPN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }
