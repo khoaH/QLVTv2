@@ -44,6 +44,8 @@
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnLamMoi1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUndo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRedo = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.bar4 = new DevExpress.XtraBars.Bar();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
@@ -135,8 +137,6 @@
             this.sP_GET_CTDDH_VATTUTableAdapter = new QLVTv2.QLVT_DATHANGDataSetTableAdapters.SP_GET_CTDDH_VATTUTableAdapter();
             this.fKCTPNPhieuNhapBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vattuTableAdapter = new QLVTv2.QLVT_DATHANGDataSetTableAdapters.VattuTableAdapter();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.dateNV.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datHangGridControl)).BeginInit();
@@ -270,8 +270,8 @@
             this.btnThoat,
             this.btnLamMoi,
             this.btnLamMoi1,
-            this.barButtonItem1,
-            this.barButtonItem2});
+            this.btnUndo,
+            this.btnRedo});
             this.barManager1.MainMenu = this.bar1;
             this.barManager1.MaxItemId = 12;
             this.barManager1.StatusBar = this.bar4;
@@ -287,8 +287,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnLamMoi1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnUndo),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRedo),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar1.OptionsBar.MultiLine = true;
             this.bar1.OptionsBar.UseWholeRow = true;
@@ -324,6 +324,24 @@
             this.btnLamMoi1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLamMoi1.ImageOptions.SvgImage")));
             this.btnLamMoi1.Name = "btnLamMoi1";
             this.btnLamMoi1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLamMoi1_ItemClick);
+            // 
+            // btnUndo
+            // 
+            this.btnUndo.Caption = "Undo";
+            this.btnUndo.Id = 10;
+            this.btnUndo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnUndo.ImageOptions.SvgImage")));
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnUndo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUndo_ItemClick);
+            // 
+            // btnRedo
+            // 
+            this.btnRedo.Caption = "Redo";
+            this.btnRedo.Id = 11;
+            this.btnRedo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRedo.ImageOptions.SvgImage")));
+            this.btnRedo.Name = "btnRedo";
+            this.btnRedo.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnRedo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRedo_ItemClick);
             // 
             // btnThoat
             // 
@@ -1221,22 +1239,6 @@
             // 
             this.vattuTableAdapter.ClearBeforeFill = true;
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Undo";
-            this.barButtonItem1.Id = 10;
-            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Redo";
-            this.barButtonItem2.Id = 11;
-            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
             // frmPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1424,7 +1426,7 @@
         private System.Windows.Forms.BindingSource vattuBindingSource;
         private QLVT_DATHANGDataSetTableAdapters.VattuTableAdapter vattuTableAdapter;
         private DevExpress.XtraEditors.TextEdit txtMaKho;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnUndo;
+        private DevExpress.XtraBars.BarButtonItem btnRedo;
     }
 }

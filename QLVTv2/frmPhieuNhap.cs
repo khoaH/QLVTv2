@@ -17,12 +17,12 @@ namespace QLVTv2
         private int _position = 0; //VatTu
         private int _positionPN = 0;
         private int _positionCTPN = 0;
-        String oldMVT = null;
-        String oldTVT = null;
         String oldMPN = null;
+        private TransactionControl tControl; 
         public frmPhieuNhap()
         {
             InitializeComponent();
+            tControl = new TransactionControl();
         }
 
         private void frmDatHang_Load(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace QLVTv2
 
             this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
             this.phieuNhapTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuNhap);
-            btnGhiPN.Enabled = btnGhi_CTPN.Enabled = btnHuyPN.Enabled = btnHuyCTPN.Enabled = false;
+            btnGhiPN.Enabled = btnGhi_CTPN.Enabled = btnHuyPN.Enabled = btnHuyCTPN.Enabled = btnUndo.Enabled = btnRedo.Enabled = false;
             btnThemPN.Enabled = btnThem_CTPN.Enabled = btnSuaPN.Enabled = btnSua_CTPN.Enabled = btnXoaPN.Enabled = btnXoaCTPN.Enabled = true;
             datHangGridControl.Enabled = true;
             PhieuNhapGroupControl.Enabled = CTPNgroupControl.Enabled = false;
@@ -85,7 +85,8 @@ namespace QLVTv2
             PhieuNhapGroupControl.Enabled = true;
             datHangGridControl.Enabled = false;
 
-            fKPhieuNhapDatHangBindingSource.AddNew();
+            tControl.prepare(new InsertTransaction(fKPhieuNhapDatHangBindingSource, "MAPN"));
+            //fKPhieuNhapDatHangBindingSource.AddNew();
 
             txtMaPhieu.ReadOnly = false;
             btnHuyPN.Enabled = btnGhiPN.Enabled = true;
@@ -140,6 +141,7 @@ namespace QLVTv2
                     PhieuNhapGroupControl.Enabled = false;
                     //isEdited = true;
 
+                    tControl.commit();
                     this.fKPhieuNhapDatHangBindingSource.EndEdit();
                     this.fKPhieuNhapDatHangBindingSource.ResetCurrentItem();
                     this.phieuNhapTableAdapter.Update(this.qLVT_DATHANGDataSet.PhieuNhap);
@@ -147,7 +149,7 @@ namespace QLVTv2
 
                     XtraMessageBox.Show("Lưu dữ liệu thành công", "", MessageBoxButtons.OK);
                     btnHuyPN.Enabled = btnGhiPN.Enabled = false;
-                    btnThem_CTPN.Enabled = btnSua_CTPN.Enabled = btnXoaCTPN.Enabled = true;
+                    btnThem_CTPN.Enabled = btnSua_CTPN.Enabled = btnXoaCTPN.Enabled = btnUndo.Enabled = true;
                     btnThemPN.Enabled = btnSuaPN.Enabled = btnXoaPN.Enabled = true;
                     btnHuyPN.PerformClick();
 
@@ -213,6 +215,7 @@ namespace QLVTv2
 
         private void btnSuaPN_Click(object sender, EventArgs e)
         {
+            tControl.prepare(new InsertTransaction(fKPhieuNhapDatHangBindingSource, "MAPN"));
             PhieuNhapGroupControl.Enabled = true;
             datHangGridControl.Enabled = false;
             txtMaPhieu.ReadOnly = false;
@@ -270,7 +273,11 @@ namespace QLVTv2
                     {
                         try
                         {
-                            fKPhieuNhapDatHangBindingSource.RemoveCurrent();
+                            string delMaPN = ((DataRowView)fKPhieuNhapDatHangBindingSource[fKPhieuNhapDatHangBindingSource.Position])["MAPN"].ToString();
+                            tControl.execute(new DeleteTransaction(fKPhieuNhapDatHangBindingSource, "MAPN"));
+                            this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
+
+                            //fKPhieuNhapDatHangBindingSource.RemoveCurrent();
                             this.phieuNhapTableAdapter.Update(this.qLVT_DATHANGDataSet.PhieuNhap);
                         }
                         catch (Exception ex)
@@ -466,11 +473,61 @@ namespace QLVTv2
 
         private void btnHuyCTPN_Click(object sender, EventArgs e)
         {
-
+            CTPNgroupControl.Enabled = false;
+            cTPNGridControl.Enabled = true;
+            fKCTPNPhieuNhapBindingSource.CancelEdit();;
+            btnThem_CTPN.Enabled = btnSua_CTPN.Enabled = btnXoaCTPN.Enabled = true;
+            btnThemPN.Enabled = btnSuaPN.Enabled = btnXoaPN.Enabled = true;
+            btnGhi_CTPN.Enabled = btnHuyCTPN.Enabled = false;
+            btnLamMoi1.PerformClick();
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
+        }
+
+        private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            tControl.undo();
+            datHangBindingSource.EndEdit();
+            datHangBindingSource.ResetCurrentItem();
+            datHangTableAdapter.Update(this.qLVT_DATHANGDataSet.DatHang);
+            fKPhieuNhapDatHangBindingSource.EndEdit();
+            fKPhieuNhapDatHangBindingSource.ResetCurrentItem();
+            this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.phieuNhapTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuNhap);
+            fKCTPNPhieuNhapBindingSource.EndEdit();
+            fKCTPNPhieuNhapBindingSource.ResetCurrentItem();
+            cTPNTableAdapter.Update(this.qLVT_DATHANGDataSet.CTPN);
+            btnUndo.Enabled = true;
+            if (tControl.undoStackSize() == 0)
+            {
+                btnUndo.Enabled = false;
+            }
+
+        }
+
+        private void btnRedo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            tControl.redo();
+            datHangBindingSource.EndEdit();
+            datHangBindingSource.ResetCurrentItem();
+            this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.datHangTableAdapter.Update(this.qLVT_DATHANGDataSet.DatHang);
+            fKPhieuNhapDatHangBindingSource.EndEdit();
+            fKPhieuNhapDatHangBindingSource.ResetCurrentItem();
+            this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.phieuNhapTableAdapter.Update(this.qLVT_DATHANGDataSet.PhieuNhap);
+            fKCTPNPhieuNhapBindingSource.EndEdit();
+            fKCTPNPhieuNhapBindingSource.ResetCurrentItem();
+            this.cTPNTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cTPNTableAdapter.Update(this.qLVT_DATHANGDataSet.CTPN);
+            btnRedo.Enabled = true;
+            if (tControl.redoStackSize() == 0)
+            {
+                btnRedo.Enabled = false;
+            }
 
         }
     }

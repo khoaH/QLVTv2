@@ -17,5 +17,12 @@ namespace QLVTv2
         {
             InitializeComponent();
         }
+
+        private void frmPhieuXuat_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.PhieuXuat' table. You can move, or remove it, as needed.
+            this.phieuXuatTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuXuat);
+
+        }
     }
 }
