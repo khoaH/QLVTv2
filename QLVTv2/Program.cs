@@ -40,6 +40,7 @@ namespace QLVTv2
         public static frmNhanVien formNhanVien;
         public static frmVatTu formVatTu;
         public static frmPhieuNhap formPhieuNhap;
+        public static frmPhieuXuat formPhieuXuat;
         public static frmDatHang formDatHang;
         public static frmKho formKho;
 

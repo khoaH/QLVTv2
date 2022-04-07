@@ -107,7 +107,7 @@ namespace QLVTv2
 
         private void btnKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(frmNhanVien));
+            Form frm = this.CheckExists(typeof(frmKho));
             if (frm != null) frm.Activate();
             else
             {
@@ -119,6 +119,19 @@ namespace QLVTv2
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
+        }
+
+        private void btnXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmPhieuXuat));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formPhieuXuat = new frmPhieuXuat();
+                Program.formPhieuXuat.MdiParent = this;
+                Program.formPhieuXuat.Show();
+            }
 
         }
     }

@@ -131,7 +131,7 @@ namespace QLVTv2
                 {
                     if (String.Compare(oldMPN, txtMaPhieu.Text.Trim()) != 0 && kiemtraPS(txtMaPhieu.Text.Trim()) == 1)
                     {
-                        XtraMessageBox.Show("Trùng mã vật Phiếu nhập!", "", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Trùng mã Phiếu nhập!", "", MessageBoxButtons.OK);
                         txtMaPhieu.Focus();
                         txtMaPhieu.Select(txtMaPhieu.Text.Length, 0);
                         return;
@@ -215,7 +215,7 @@ namespace QLVTv2
 
         private void btnSuaPN_Click(object sender, EventArgs e)
         {
-            tControl.prepare(new InsertTransaction(fKPhieuNhapDatHangBindingSource, "MAPN"));
+            tControl.prepare(new UpdateTransaction(fKPhieuNhapDatHangBindingSource, "MAPN"));
             PhieuNhapGroupControl.Enabled = true;
             datHangGridControl.Enabled = false;
             txtMaPhieu.ReadOnly = false;
